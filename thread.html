@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" class="overlay" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Discussion-Thread</title>
+</head>
+<body style="overflow-x: hidden;">
+
+    <!-- Menu at top -->
+
+    <div class="menu">
+        <a class="footer-text menu-items" href="index.html">Home</a>
+        <a class="footer-text menu-items" href="Timetable.html">Timetable</a>
+        <a class="footer-text menu-items" href="Discussions.html">Discussion</a>
+        <a class="footer-text menu-items" href="Share_Resources.html">Share Resources</a>
+        <a class="footer-text menu-items" href="About_Us.html">About Us</a>
+        <a class="footer-text menu-items" href="Contact_Us.html">Contact Us</a>
+    </div>
+
+    <!-- Single Discussion Thread -->
+
+    <div class="top_bar">
+        <h1 id="thread_heading" class="heading-text">Thread Placeholder</h1>
+    </div>
+    <div class="thread_content">
+        <div class="discuss_head">
+            <h3 id="thread_content" class="discuss_title footer-text">Still a Work in progress</h3>
+            <div class="head_bottom">
+            </div>
+        </div>
+        <form>
+            <label for="userName" class="body-text">User Name:</label><br>
+            <input type="text" id="userName" name="userName"><br>
+        </form>
+        <p class="body-text">Comment:</p>
+        <textarea name="" id=""></textarea>
+        <button id="submit_comment">Add Comment</button>
+        <div class="comments">
+            <div class="comment">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer" style="color: white; margin-top: 28vh">
+        <p>© CTU-Buddy. All rights reserved.</p>
+        <a href="Homepage.html" class="footer-text">Homepage</a>
+        <a href="Timetable.html" class="footer-text">Timetable</a>
+        <a href="Discussions.html" class="footer-text">Discussions</a>
+        <a href="Share_Resources.html" class="footer-text">Share Resources</a>
+        <a href="About_Us.html" class="footer-text">About Us</a>
+        <a href="Contact_Us.html" class="footer-text">Contact Us</a>
+    </div>
+
+<!-- Sorry trying to learn JavaScript to fill page with stored JSON data still not working yet -->
+
+    <script src="data.js"></script>
+    <script>
+        var id = window.location.search.slice(1);
+        var thread = threads.find(t => t.id == id);
+
+
+        document.getElementById('thread_heading').innerHTML = thread.title;
+        document.getElementById('thread_content').innerHTML = thread.content;
+        console.log(thread);
+        var header = document.querySelector('.discuss_head');
+        var headerHtml = `
+            <h3 class="discuss_title footer-text"></h3>
+                <div class="head_bottom">
+                    <p class="timestamp body-text">${new Date(thread.date).toLocaleString()}</p>
+                    <p class="comment_count body-text">${thread.comments.length} comments</p>
+                </div>
+        `
+        header.insertAdjacentHTML('beforeend', headerHtml);
+
+        function addComment(comment) {
+            var commentHtml = `
+                <div class="comment">
+                    <div class="top_comment">
+                        <p class="user body-text">${comment.author}</p>
+                        <p class="timestamp body-text">${new Date(thread.date).toLocaleString()}</p>
+                    </div>
+                    <div class="comment_content body-text">
+                        ${comment.content}
+                    </div>
+                </div>
+            `
+            comments.insertAdjacentHTML('beforeend', commentHtml);
+        }
+
+        var comments = document.querySelector('.comments');
+        for (let comment of thread.comments) {
+            addComment(comment);
+        };
+
+        const btn = document.getElementById('submit_comment');
+        btn.addEventListener('click', function() {
+            console.log('clicked')
+            var txt = document.querySelector('textarea');
+            var userDetails = document.getElementById('userName');
+            var comment = {
+                content: txt.value,
+                date: Date.now(),
+                author: userDetails.value
+            };
+            addComment(comment);
+            txt.value = ''
+            thread.comments.push(comment);
+            localStorage.setItem('threads', JSON.stringify(threads));
+        });
+    </script>
+
+    <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+</body>
+</html>

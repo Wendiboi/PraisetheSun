@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" class="overlay">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Discussions</title>
+</head>
+<body style="height: 100vh; overflow-x:hidden">
+
+    <div class="menu">
+        <a class="footer-text menu-items" href="index.html">Home</a>
+        <a class="footer-text menu-items" href="Timetable.html">Timetable</a>
+        <a class="footer-text menu-items" href="Discussions.html">Discussion</a>
+        <a class="footer-text menu-items" href="Share_Resources.html">Share Resources</a>
+        <a class="footer-text menu-items" href="About_Us.html">About Us</a>
+        <a class="footer-text menu-items" href="Contact_Us.html">Contact Us</a>
+    </div>
+
+    <img src="Resources/ctu-logo.png" alt="logo" style="height: 100px; left: 0px; margin-top:-30px">
+
+    <div class="discussions_heading heading-text">
+        <h1>Join in on the Discussion</h1>
+    </div>
+
+    <!-- Where the JavaScript places the returned threads data -->
+    
+    <div class="discuss_contain">
+        <li>
+        </li>
+    </div>
+
+    <div class="footer" style="color: white; margin-top: 42vh">
+        <p>© CTU-Buddy. All rights reserved.</p>
+        <a href="Homepage.html" class="footer-text">Homepage</a>
+        <a href="Timetable.html" class="footer-text">Timetable</a>
+        <a href="Discussions.html" class="footer-text">Discussions</a>
+        <a href="Share_Resources.html" class="footer-text">Share Resources</a>
+        <a href="About_Us.html" class="footer-text">About Us</a>
+        <a href="Contact_Us.html" class="footer-text">Contact Us</a>
+    </div>
+</body>
+
+<!-- Script to view threads on Discussion page -->
+
+<script src="data.js"></script>
+<script>
+    var container = document.querySelector('li');
+    for (let thread of threads) {
+        var html = `
+        <li class="row">
+                <a href="/thread.html?${thread.id}" class="disc_link">
+                    <h3 class="discuss_title">${thread.title}</h3>
+                    <div class="discuss_content">
+                        <p class="timestamp">${new Date(thread.date).toLocaleString()}</p>
+                        <p class="comment_count">${thread.comments.length} comments</p>
+                    </div>
+                </a>
+            </li>
+        `
+        container.insertAdjacentHTML('beforeend', html)
+    };
+</script>
+</html>

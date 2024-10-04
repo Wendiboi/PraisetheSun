@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-x:hidden">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+  </head>
+  <body class="overlay">
+    <div class="menu">
+      <a class="footer-text menu-items" href="index.html">Home</a>
+      <a class="footer-text menu-items" href="Timetable.html">Timetable</a>
+      <a class="footer-text menu-items" href="Discussions.html">Discussion</a>
+      <a class="footer-text menu-items" href="Share_Resources.html">Share Resources</a>
+      <a class="footer-text menu-items" href="About_Us.html">About Us</a>
+      <a class="footer-text menu-items" href="Contact_Us.html">Contact Us</a>
+    </div>
+
+    <div class="contact_usbody">
+      <img src="Resources/ctu-logo.png" alt="Logo" style="height: 200px">
+
+      <form class="contact_usform" id="ContactForm">
+        <h1
+          id="form-title"
+          style="text-align: center; padding-bottom: 10px; color: black"
+          class="footer-text"
+        >
+          Contact Us
+        </h1>
+
+        <div>
+          <div>
+            <label for="name">First name:</label>
+            <input
+              type="text"
+              required
+              placeholder="Enter your First Name"
+              class="contact_usinput"
+              id="FirstName"
+              name='FirstName'
+            />
+          </div>
+          <div>
+            <label for="name">Last name:</label>
+            <input
+              type="text"
+              required
+              placeholder="Enter your Last Name"
+              class="contact_usinput"
+              id="LastName"
+              name='LastName'
+            />
+          </div>
+        </div>
+
+        <div>
+          <label for="email">Email Address:</label>
+          <input
+          type="email"
+          required
+          placeholder="Enter your email address"
+          class="contact_usinput"
+          id="Email"
+          name='Email'
+          />
+          <label for="student_nunmber">Student Number</label>
+          <input
+            type="number"
+            required
+            placeholder="Enter your student number"
+            class="contact_usinput"
+            id="StudentNum"
+            name='StudentNum'
+          />
+        </div>
+        <div>
+          <label for="Message">Do you have a question?</label>
+          <textarea
+            required
+            placeholder="Please type your message here"
+            class="contact_ustextarea"
+          ></textarea>
+        </div>
+
+        <div style="padding-bottom: 1rem">
+          <input type="checkbox" id="Consent" name='Consent' required/>
+          <label for="consent"
+            >Can the team contact you if needed?</label
+          >
+          <br>
+          <input type="checkbox" id="Subscribed" name='Subscribed'/>
+          <label for="subscribed"
+            >Do you want to subscribe to receive emails from us?</label
+          >
+        </div>
+        <div class="submission">
+          <button type="submit" class="contact_submit" id="submit" name='Submit'>Submit</button>
+        </div>
+      </form>
+      <div class="socials">
+        <div class="social_text">
+          <p>More ways to get in Contact with us:</p>
+        </div>
+          <div class="social-media-links">
+            <a href="#">
+              <img class="link-img" src="Resources/ContactUsRes/twitter.png">
+            </a>
+            <a href="#">
+              <img class="link-img" src="Resources/ContactUsRes/facebook.png">
+            </a>
+            <a href="#">
+              <img class="link-img" src="Resources/ContactUsRes/email.png">
+            </a>
+            <a href="#">
+              <img class="link-img" src="Resources/ContactUsRes/instagram.png">
+            </a>
+            <a href="#">
+              <img class="link-img" src="Resources/ContactUsRes/whatsapp.png">
+            </a>
+          </div>
+      </div>
+      <div class="map" style="height: 15rem;">
+        <h1 class="heading-text" style="padding-bottom: 10px">
+          Where CTU is located
+        </h1>
+        <iframe
+          style="margin-bottom: 5rem;"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3486.7612935385405!2d26.154309311144676!3d-29.083197987267983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e8fdb6a5867b92b%3A0x6a68f1ae264ac9e!2sCTU%20Training%20Solutions%20Bloemfontein!5e0!3m2!1sen!2sza!4v1725609281751!5m2!1sen!2sza"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+    <div class="footer" style="color: white;  margin-top: 45rem">
+      <p>© CTU-Buddy. All rights reserved.</p>
+      <a href="Homepage.html" class="footer-text">Homepage</a>
+      <a href="Timetable.html" class="footer-text">Timetable</a>
+      <a href="Discussions.html" class="footer-text">Discussions</a>
+      <a href="Share_Resources.html" class="footer-text">Share Resources</a>
+      <a href="About_Us.html" class="footer-text">About Us</a>
+      <a href="Contact_Us.html" class="footer-text">Contact Us</a>
+  </div>
+  </body>
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script>
+    const { createClient } = supabase
+    supabase = createClient('https://erthijfrstmrlcshonff.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVydGhpamZyc3Rtcmxjc2hvbmZmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjgwMzY2MjMsImV4cCI6MjA0MzYxMjYyM30.xKSGIBXjuFB3ZdYaCOm8l9sETP-5VmauLmWgUZxyzKU')
+
+    const form = document.querySelector('#ContactForm')
+    form.addEventListener('submit', async(event) => {
+      event.preventDefault()
+
+      const formInputs = form.querySelectorAll('#FirstName, #LastName, #Email, #StudentNum, #Consent, #Subscribed')
+
+      let submission = {}
+
+      formInputs.forEach(Element => {
+        const {value, name} = Element
+        if (value) {
+          submission[name] = value
+        }
+      })
+
+      console.log(submission)
+
+      const { error, data} = await supabase.from('ProjectUsers').insert([submission])
+
+      console.log({error,data})
+
+      if (error) {
+        alert('There was an error please try again')
+      } else {
+        alert('Thanks for contacting us')
+      }
+    })
+</script>
+</html>

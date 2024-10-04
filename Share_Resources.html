@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-x:hidden">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Resources</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+		<script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+  </head>
+  <body class="overlay">
+    <div class="menu">
+      <a class="footer-text menu-items" href="index.html">Home</a>
+      <a class="footer-text menu-items" href="Timetable.html">Timetable</a>
+      <a class="footer-text menu-items" href="Discussions.html">Discussion</a>
+      <a class="footer-text menu-items" href="Share_Resources.html">Share Resources</a>
+      <a class="footer-text menu-items" href="About_Us.html">About Us</a>
+      <a class="footer-text menu-items" href="Contact_Us.html">Contact Us</a>
+    </div>
+	<img src="Resources/ctu-logo.png" alt="logo" style="height: 100px; left: 0px; margin-top:-30px">
+    <div class="bg-center-container">
+		<div class="heading-text" style="justify-content: center; text-align: center; margin-left: auto; margin-right: auto; margin-bottom: 3rem; size: large;"><h1 style="font-size: 30px;">Download and Share Resources</h1>
+		<h3 style="font-size: 20px;">Here you can share resources amongst your fellow peers.</h3>
+		</div>
+	<div class="Share_container">
+        <div class="container-heading">
+            <h2 class="resources_heading-text">Download and Share Files</h2>
+        </div>
+        <div style="padding: 1rem;">
+			<p>PLC 6th Edition</p><a href="https://erthijfrstmrlcshonff.supabase.co/storage/v1/object/public/ProjectResources/Programmable%20Logic%20Controllers,%20Sixth%20Edition%20(William%20Bolton)%20(Z-Library)%20(1).pdf?t=2024-10-04T18%3A39%3A41.320Z">Download</a>
+			<br><br>
+			<p>Star Wars Episode 3 Script</p><a href="https://erthijfrstmrlcshonff.supabase.co/storage/v1/object/public/ProjectResources/star-wars-episode-iii-revenge-of-the-sith-2005.pdf?t=2024-10-04T18%3A45%3A00.793Z">Download</a>
+		</div>
+    </div>
+	<form id="UploadForm" style="justify-content: center; margin-top: 2rem;">
+		<input type="file" name="file" onchange="uploadFile(event)">
+	</form>
+</div>
+<div class="footer" style="color: white;">
+	<p>© CTU-Buddy. All rights reserved.</p>
+	<a href="Homepage.html" class="footer-text">Homepage</a>
+	<a href="Timetable.html" class="footer-text">Timetable</a>
+	<a href="Discussions.html" class="footer-text">Discussions</a>
+	<a href="Share_Resources.html" class="footer-text">Share Resources</a>
+	<a href="About_Us.html" class="footer-text">About Us</a>
+	<a href="Contact_Us.html" class="footer-text">Contact Us</a>
+</div>
+</body>
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<script>
+const {createClient} = supabase
+supabase = createClient('https://erthijfrstmrlcshonff.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVydGhpamZyc3Rtcmxjc2hvbmZmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjgwMzY2MjMsImV4cCI6MjA0MzYxMjYyM30.xKSGIBXjuFB3ZdYaCOm8l9sETP-5VmauLmWgUZxyzKU')
+
+const CDNURL = "https://erthijfrstmrlcshonff.supabase.co/storage/v1/object/public/ProjectResources/"
+const form = document.querySelector('#UploadForm')
+
+async function getFiles() {
+	const { data, error } = await supabase.storage.from('ProjectResources').list()
+	console.log(data)
+	
+}
+
+async function uploadFile(event) {
+    const  file = event.target.files[0];
+	console.log(file)
+	console.log(event)
+    const{error} = await supabase.storage.from('ProjectResources').upload( file.name, file )
+	if (error) {
+	  alert('There was an error')
+	  console.log(error)
+	} else {
+	  alert('Your file was uploaded')
+	}
+}
+
+getFiles();
+
+</script>
+</html>

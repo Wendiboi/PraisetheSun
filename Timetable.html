@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<!-- Imports -->
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTU BUDDY | Timetables</title>
+</head>
+
+<body class="overlay" style="overflow-x: hidden;">
+
+<!-- Header menu -->
+<div class="menu">
+    <a class="footer-text menu-items" href="index.html">Home</a>
+    <a class="footer-text menu-items" href="Timetable.html">Timetable</a>
+    <a class="footer-text menu-items" href="Discussions.html">Discussion</a>
+    <a class="footer-text menu-items" href="Share_Resources.html">Share Resources</a>
+    <a class="footer-text menu-items" href="About_Us.html">About Us</a>
+    <a class="footer-text menu-items" href="Contact_Us.html">Contact Us</a>
+</div>
+
+<img src="Resources/ctu-logo.png" alt="logo" style="height: 100px; left: 0px; margin-top:-30px">
+
+<!-- Title and description-->
+
+<h1 class="title-text" style="text-align: center;">TimeTable</h1>
+<p class="title-paragraph">Check you weekly class schedule for your chosen Course</p>
+
+<!-- Dropdown list for course choices -->
+<div class="select-menu">
+    <div class="select-btn">
+        <span class="sBtn-text">Select your Course</span>
+        <i class="bx bx-chevron-down"></i>
+    </div>
+
+    <ul class="options">
+        <li class="option">
+            <i class="fa fa-desktop" aria-hidden="true"></i>
+            <button class="option-text" onclick="showTableSE()">Software Engineering</button>
+        </li>
+        <li class="option">
+            <i class="fa fa-paint-brush" aria-hidden="true"></i>
+            <button class="option-text" onclick="showTableFA()">Fine Art</button>
+        </li>
+        <li class="option">
+            <i class="fa fa-building" aria-hidden="true"></i>
+            <button class="option-text" onclick="showTableA()">Architecture</button>
+        </li>
+    </ul>
+</div>
+
+
+    <div class="table_contain">      
+        <table class="content-table" id="Software_Engineering">
+            <caption class="caption">
+                Software Engineering
+            </caption>
+            <thead>
+                <tr>
+                    <th>Day/Period</th>
+                    <th>I <br> 9:30 - 10:20</th>
+                    <th>II <br> 10:20 - 11:20</th>
+                    <th>III <br> 11:20 - 12:00</th>
+                    <th>IV <br> 12:00 - 13:00</th>
+                    <th>V <br> 13:00 - 13:20</th>
+                    <th>VI <br> 13:20 - 15:10</th>
+                    <th>VII <br> 15:00 - 16:00</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Monday</th>
+                    <td> RD412 </td>
+                    <td> RD412 </td>
+                    <td> Group Research </td>
+                    <td> Lunch </td>
+                    <td> CW412 </td>
+                    <td> CW412 </td>
+                    <td> CW412 </td>
+                </tr>
+                <tr>
+                    <th>Tuesday</th>
+                    <td> RD412 </td>
+                    <td> RD412 </td>
+                    <td> Self Study/Research </td>
+                    <td> Lunch </td>
+                    <td> ENA412 </td>
+                    <td> ENA412 </td>
+                    <td> ENA412 </td>
+                </tr>
+                <tr>
+                    <th>Wednesday</th>
+                    <td> ENA412 </td>
+                    <td> ENA412 </td>
+                    <td> ENA412 </td>
+                    <td> Lunch </td>
+                    <td> CF412 </td>
+                    <td> CF412 </td>
+                    <td> CF412 </td>
+                </tr>
+                <tr>
+                    <th>Thursday</th>
+                    <td> CW412 </td>
+                    <td> CW412 </td>
+                    <td> Self Study/Research </td>
+                    <td> Lunch </td>
+                    <td> FDM411 </td>
+                    <td> FDM411 </td>
+                    <td> FDM411 </td>
+                </tr>
+                <tr>
+                    <th>Friday</th>
+                    <td> CF412 </td>
+                    <td> CF412 </td>
+                    <td> Group Research </td>
+                    <td> Lunch </td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
+                </tr>
+        </tbody>
+        </table>
+
+        <table class="content-table" id="Fine_Art">
+            <caption class="caption">
+                Fine Art
+            </caption>
+            <thead>
+                <tr>
+                    <th>Day/Period</th>
+                    <th>I <br> 9:30 - 10:20</th>
+                    <th>II <br> 10:20 - 11:20</th>
+                    <th>III <br> 11:20 - 12:00</th>
+                    <th>IV <br> 12:00 - 13:00</th>
+                    <th>V <br> 13:00 - 13:20</th>
+                    <th>VI <br> 13:20 - 15:10</th>
+                    <th>VII <br> 15:00 - 16:00</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Monday</th>
+                    <td> FOD </td>
+                    <td> FOD / FD </td>
+                    <td> FD </td>
+                    <td> Lunch </td>
+                    <td> ITD </td>
+                    <td> ITD / AF </td>
+                    <td> AF </td>
+                </tr>
+                <tr>
+                    <th>Tuesday</th>
+                    <td> FOD </td>
+                    <td> FOD / FD </td>
+                    <td> FD </td>
+                    <td> Lunch </td>
+                    <td> ITD </td>
+                    <td> ITD / AF </td>
+                    <td> AF </td>
+                </tr>
+                <tr>
+                    <th>Wednesday</th>
+                    <td> FOD </td>
+                    <td> FOD / FD </td>
+                    <td> FD </td>
+                    <td> Lunch </td>
+                    <td> ITD </td>
+                    <td> ITD / AF </td>
+                    <td> AF </td>
+                </tr>
+                <tr>
+                    <th>Thursday</th>
+                    <td> FOD </td>
+                    <td> FOD / FD </td>
+                    <td> FD </td>
+                    <td> Lunch </td>
+                    <td> ITD </td>
+                    <td> ITD / AF </td>
+                    <td> AF </td>
+                </tr>
+                <tr>
+                    <th>Friday</th>
+                    <td> FOD </td>
+                    <td> FOD / FD </td>
+                    <td> FD </td>
+                    <td> Lunch </td>
+                    <td> ITD </td>
+                    <td> ITD / AF </td>
+                    <td> AF </td>
+                </tr>
+        </tbody>
+        </table>
+    
+    <table class="content-table" id="Architecture">
+        <caption class="caption">
+            Architecture
+        </caption>
+        <thead>
+            <tr>
+                <th>Day/Period</th>
+                <th>I <br> 9:30 - 10:20</th>
+                <th>II <br> 10:20 - 11:20</th>
+                <th>III <br> 11:20 - 12:00</th>
+                <th>IV <br> 12:00 - 13:00</th>
+                <th>V <br> 13:00 - 13:20</th>
+                <th>VI <br> 13:20 - 15:10</th>
+                <th>VII <br> 15:00 - 16:00</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Monday</th>
+                <td> TOS-II </td>
+                <td> TOS-II </td>
+                <td> HOAC-II </td>
+                <td> Lunch </td>
+                <td> HOAC-II </td>
+                <td> FOA </td>
+                <td> FOA </td>
+            </tr>
+            <tr>
+                <th>Tuesday</th>
+                <td> AD-I </td>
+                <td> AD-I </td>
+                <td> AD-I </td>
+                <td> Lunch </td>
+                <td> AD-I </td>
+                <td> AGD-II </td>
+                <td> AGD-II </td>
+            </tr>
+            <tr>
+                <th>Wednesday</th>
+                <td> BCM-II </td>
+                <td> BCM-II </td>
+                <td> BCM-II </td>
+                <td> Lunch </td>
+                <td> FOA </td>
+                <td> AUDIT Project </td>
+                <td> AUDIT Project </td>
+            </tr>
+            <tr>
+                <th>Thursday</th>
+                <td> AD-I </td>
+                <td> AD-I </td>
+                <td> AD-I </td>
+                <td> Lunch </td>
+                <td> AGD-II </td>
+                <td> AGD-II </td>
+                <td> AGD-II </td>
+            </tr>
+            <tr>
+                <th>Friday</th>
+                <td> WS-II </td>
+                <td> WS-II </td>
+                <td> WS-II </td>
+                <td> Lunch </td>
+                <td> HOAC-II </td>
+                <td> BCM-II </td>
+                <td> BCM-II </td>
+            </tr>
+    </tbody>
+    </table>
+
+        <!-- Exams table -->
+        <div class="exam-table">
+            <table class="content-table" >
+                <caption class="caption">
+                    Exams for this semester
+                </caption>
+                <thead>
+                    <tr>
+                        <th>Exams</th>
+                        <th>Date /<br> Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th> Auto CAD </th>
+                        <td> 10 Jun <br>09:00 - 10:00 </td>
+                    </tr>
+                    <tr>
+                        <th> DP - 900 </th>
+                        <td> 10 Jun <br>09:00 - 10:00 </td>
+                    </tr>
+                    <tr>
+                        <th> DP - 300 </th>
+                        <td> 10 Jun <br>09:00 - 10:00 </td>
+                    </tr>
+                    <tr>
+                        <th> AZ - 104 </th>
+                        <td> 11 Jun <br>10:00 - 11:00 </td>
+                    </tr>
+                    <tr>
+                        <th> ITS </th>
+                        <td> 12 Jun <br>11:30 - 12:00 </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Events table -->
+        <div class="event-table">
+            <table class="content-table" >
+                <caption class="caption">
+                    Events for this semester
+                </caption>
+                <thead>
+                    <tr>
+                        <th>Events</th>
+                        <th>Date /<br> Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Sports Day</th>
+                        <td> 14 Jun <br>08:00 - 11:00 </td>
+                    </tr>
+                    <tr>
+                        <th>LAN Night</th>
+                        <td> 24 May <br>18:00 - 21:00 </td>
+                    </tr>
+                    <tr>
+                        <th>Mr and Ms CTU</th>
+                        <td> 21 Jul <br>14:00 - 16:30 </td>
+                    </tr>
+                    <tr>
+                        <th>Braaiday</th>
+                        <td> 5 Apr <br>08:00 - 12:00 </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="footer" style="color: white;">
+        <p>© CTU-Buddy. All rights reserved.</p>
+        <a href="Homepage.html" class="footer-text">Homepage</a>
+        <a href="Timetable.html" class="footer-text">Timetable</a>
+        <a href="Discussions.html" class="footer-text">Discussions</a>
+        <a href="Share_Resources.html" class="footer-text">Share Resources</a>
+        <a href="About_Us.html" class="footer-text">About Us</a>
+        <a href="Contact_Us.html" class="footer-text">Contact Us</a>
+    </div>
+
+<script src="main.js"></script>
+</body>
+</html>
